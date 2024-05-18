@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Parking</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=2823b93c73283dfb10d77b196042175eee589f82&callback=initMap"
+    ></script>
+  </head>
+  <body onload="initMap()">
+    <header>
+      <h1>Car Parking Management</h1>
+    </header>
+    <main>
+      <section id="check-availability">
+        <h2>Check Availability</h2>
+        <button onclick="checkAvailability()">Check Available Slots</button>
+        <div id="availability-result"></div>
+      </section>
+
+      <section id="reserve-slot">
+        <h2>Reserve a Slot</h2>
+        <form id="reservation-form">
+          <label for="slot-number">Slot Number:</label>
+          <input type="number" id="slot-number" name="slot-number" required />
+          <button type="submit">Reserve</button>
+        </form>
+        <div id="reservation-result"></div>
+      </section>
+
+      <section id="parking-location">
+        <h2>Parking Location</h2>
+        <div id="location-map"></div>
+      </section>
+
+      <section id="alternative-parking">
+        <h2>Alternative Parking Areas</h2>
+        <button onclick="findAlternatives()">Find Closest Alternatives</button>
+        <div id="alternative-result"></div>
+      </section>
+    </main>
+    <script src="scripts.js"></script>
+  </body>
+</html>
